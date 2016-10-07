@@ -1,0 +1,5 @@
+<view class = "header">
+    <view class = "search_logo"></view>
+    <input class = "search_input" bindchange="bindInputChange" bindfocus="bindFocusStyle" placeholder ="搜索" />
+</view>
+<view class="menu" bindtap="bindButtonTapSheet">=</view>
