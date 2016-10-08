@@ -1,0 +1,30 @@
+<!-----------------------------------------------------------WXML----------------------------------------------->
+<!--数据绑定-->
+<view>{{message}}</view>
+<!--列表渲染-->
+<view wx:for="{{array}}">{{item}}</view>
+<!--条件渲染-->
+<view wx:if="{{view=='WEBVIEW'}}">{{view}}</view>
+<view wx:elif="{{view=='APP'}}">{{view}}</view>
+<view wx:else="{{view=='fuck'}}">{{view}}</view>
+<!--模板-->
+<template name = "staffName">
+    <view>
+     FirstName:{{firstName}},lastName:{{lastName}}
+    </view>
+</template>
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+<!--事件-->
+<view bindtap="add">{{count}}</view>
+<!-----------------------------------------------------------数据绑定----------------------------------------------->
+<!--组件属性-->
+<!--<view id="item-{{id}}"></view>????????????-->
+<!--运算-->
+    <!--三元运算-->
+    <!--<view hidden="{{1==2? true:false}}">Hidden</view>？？？？？？？？？？-->
+    <!--算数运算-->
+    <view>{{a+b+c}}+d</view>
+
+<!-----------------------------------------------------------条件渲染----------------------------------------------->
