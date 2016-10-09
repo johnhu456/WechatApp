@@ -2,13 +2,52 @@ var data = {
     "code" : "0",
     "cards":{
         "A":[
-            1,2,3,4
+           {
+               "id":"1",
+               "value":"sfaf",
+               "userName":"a1",
+               "job":"cook",
+               "company":"223"
+           },
+           {
+               "id":"2",
+               "value":"1234",
+               "userName":"a2",
+               "job":"developer",
+               "company":"223"
+           },
         ],
         "B":[
-            1,2,3,4
+           {
+               "id":"1",
+               "value":"sfaf",
+               "userName":"b1",
+               "job":"engineer",
+               "company":"CO.LTDD"
+           },
+           {
+               "id":"2",
+               "value":"1234",
+               "userName":"b2",
+               "job":"singer",
+               "company":"CO.LTDD"
+           },
         ],
         "C":[
-            1,2,3,4
+           {
+               "id":"1",
+               "value":"sfaf",
+               "userName":"c1",
+               "job":"JAVA",
+               "company":"LLJZ"               
+           },
+           {
+               "id":"2",
+               "value":"1234",
+               "userName":"c2",
+               "job":"iOS",
+               "company":"LLJZ"              
+           },
         ],
     }
 }

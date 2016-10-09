@@ -25,7 +25,7 @@
 
 <!--默认排序-->
 <view class="sort_list_wrap" style="display:{{showNameData}};">
-    <block wx-for="{{nameData}}" wx:for-item="group" wx:for-index="idx">
+    <block wx:for="{{nameData}}" wx:for-item="group" wx:for-index="idx">
         <view class="sort_list_A" bindtap="lettersTap" id="sort_list_A" style="display:{{show_letter}}">{{group.name}}
         </view>
         <template is="cardList" data="{{cards:group.cards}}"/>
@@ -34,8 +34,9 @@
 
 <!--日期排序-->
 <view class="sort_list_wrap" style="display:{{showTimeData}};">
-    <block wx-for="{{timeData}}" wx:for-item="group" wx:for-index="idx">
+    <block wx:for="{{timeData}}" wx:for-item="group" wx:for-index="idx">
         <view class="sort_list_A" bindtap="lettersTap" id="sort_list_A" style="display:{{show_letter}}">{{group.name}}
         </view>
         <template is="cardList" data="{{cards:group.cards}}"/>
     </block>
+</view>

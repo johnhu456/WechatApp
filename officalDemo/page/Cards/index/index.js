@@ -1,6 +1,5 @@
 
 var card_list_name = require("data/card_list_name.js");
-var nameData;
 Page({
   data:{
     //  id:0,
@@ -14,23 +13,17 @@ Page({
     //  a:1,
     //  b:2,
     //  c:3,
+    nameData:[]
   },
   bindInputChange:function(e){
       console.log('13234')
-  },
-  //响应搜索框点击
-  bindFocusStyle:function(e){
-      console.log('focus')
-  },
-  //响应按钮点击点击
-  bindButtonTapSheet:function(e){
-      console.log('tap')
   },
   onLoad:function(){
     // 页面初始化 options为页面跳转所带来的参数
     // 排序字母显示
     console.log(card_list_name)
     var data1 = card_list_name.data.cards
+    console.log('===='+data1)
     nameData = []
     for(var k in data1){
       var group = {}
@@ -63,6 +56,18 @@ Page({
   },
   onPullDownRefresh:function(){
     console.log('pulldown')
+  },
+  //PublicMethodethod=======================
+    //响应搜索框点击
+  bindFocusStyle:function(e){
+      console.log('focus')
+  },
+  //响应按钮点击点击
+  bindButtonTapSheet:function(e){
+      console.log('tap')
+  },
+  lettersTap:function(e){
+    console.log(e)
   }
 
 })
