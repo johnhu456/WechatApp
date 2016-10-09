@@ -11,7 +11,7 @@
         <view class="user_card" style="display:{{card.display}};"
         bindtap="bindDrawerTap" data-card_id="{{card.id}}" data-card_type="{{card.cardType==null?'COMMON':card.cardType}}">
             <image class="userPhoto" src="{{card.thumbnail==null? '':card.thumbnail}}"/>
-            <view class="userinfo" id="userinfo" style="background:{{(card.cardType!=null&&card.cardType=='OFFLINE')? 'url(/images/trash.png) no-repeat 88% 0.8rem':'white'}}; background-size:12%;">
+            <view class="userinfo" id="userinfo" style="background:{{(card.cardType!=null&&card.cardType=='OFFLINE')? 'url(image/trash.png) no-repeat 88% 0.8rem':'white'}}; background-size:12%;">
             <view class="username">{{card.userName==null?'':card.userName}}</view>
             <view class="userjob">
                 <text class="userpost1" wx:if="{{card.unit!=null && card.unit != ''}}">{{card.unit==null?'':card.unit}}</text>

@@ -1,14 +1,15 @@
 .user_card{
     width: 100%;
     height:6.9rem;
+    background: red;
 }
-.userphoto{
+.userPhoto{
     width: 35%;
     height:6.35rem;
     display: block;
     float:left;
     border: 0.07rem solid #F2F2F2;
-    border-left: 0;
+    border-left: 2rem;
     box-sizing:border-box;
     margin-top:0.32rem;
 }
