@@ -67,6 +67,10 @@ Page({
       console.log('tap')
   },
   lettersTap:function(e){
+    console.log(e.target.dataset.listName)
+  },
+  bindDrawerTap:function(e){
+    console.log(e.currentTarget.dataset.cardId)
     console.log(e)
   }
 
