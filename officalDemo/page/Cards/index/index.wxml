@@ -40,3 +40,49 @@
         <template is="cardList" data="{{cards:group.cards}}"/>
     </block>
 </view>
+
+<!--菜单栏-->
+<action-sheet class="card_action_sheet" hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <view class="index_menu_borderbtm">
+        <view class="top_menu">
+            <navigator url="offline_card_ocr">
+                <div class="top_menu_button">
+                <image class="top_menu_radius" src="image/addNewCard.png"></image>
+                <text class="txt">添加名片</text>
+                </div>
+            </navigator>
+        </view>
+        <view class="top_menu">
+            <div class="top_menu_button">
+            <image class="top_menu_radius top_menu_ocr" src="image/scanNewCard.png" bindtap="ocrTap">button</image>
+            <text class="txt">扫一扫</text>
+            </div>
+        </view>
+        <view class="top_menu">
+            <navigator url="page/team/card_team_detail">
+                <div class="top_menu_button">
+                <image class="top_menu_radius top_menu_batch" src="image/manageCards.png" bindtap="batchTap" ></image>
+                <text class="txt">批量操作</text>
+                </div>
+            </navigator>
+        </view>
+        <view class="top_menu">
+            <div class="top_menu_button">
+            <image class="top_menu_radius message" src="image/message.png" bindtap="tapMessage"></image>
+            <text class="txt">消息</text>
+            </div>
+        </view>
+    </view>
+<view class="sort_way">排序方式</view>
+<radio-group class="index_menu_radio" value="0">
+    <label class="index_menu_list {{classColorTime}}" bindtap="bindTapTimeData">按日期<icon style="display:{{iconDisplayTime}}" class="icon1" type="success_no_circle" color="#14B3ED" size="18"/></label>
+    <label class="index_menu_list {{classColorName}}" bindtap="bindTapNameData">按姓名<icon style="display:{{iconDisplayName}}" class="icon1" type="success_no_circle" color="#14B3ED" size="18"/></label>
+    <label class="index_menu_list {{classColorCompany}}" bindtap="bindTapCompanyData">按公司<icon style="display:{{iconDisplayCompany}}" class="icon1" type="success_no_circle" color="#14B3ED" size="18"/></label>
+</radio-group>
+<view class="menu-cancel" bindtap="actionSheetChange">取消</view>
+</action-sheet>
+
+<!--页面加载动画-->
+<view class="mode_wrap" style="display:{{toastDisplay}}; background:rgba(100,100,100,0.6);">
+    <toast icon="waiting">加载中...</toast>
+</view>

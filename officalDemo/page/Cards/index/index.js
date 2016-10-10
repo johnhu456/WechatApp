@@ -1,20 +1,22 @@
 
 var card_list_name = require("data/card_list_name.js");
+var actionSheetHidden=true;
 Page({
   data:{
-    //  id:0,
-    //  count:1,
-    //  message:"这是一个页面",
-    //  array:[1,2,3,4,5],
-    //  view:"fuck",
-    //  staffA:{firstName:'AfirstName',lastName:'AlastName'},
-    //  staffB:{firstName:'BfirstName',lastName:'BlastName'},
-    //  staffC:{firstName:'CfirstName',lastName:'ClastName'},
-    //  a:1,
-    //  b:2,
-    //  c:3,
-    nameData:[]
+    nameData:[],
+    // indexMenuDisplay:"none",
+    // show:true,
+    // show_letter:"block",
+    // messageInfoDisplay:"block",
+    // sort:"ABCDEFGHIJKLMNOPQRSTUVWXYZ#",
+    // messageModuleDisplay:"block",
+    // messageInfoDisplay:"block",
+    actionSheetHidden:actionSheetHidden,
+    //Toast展示
+    toastDisplay:"",
+    htmlWrapDiaplay:""
   },
+
   bindInputChange:function(e){
       console.log('13234')
   },
@@ -35,7 +37,9 @@ Page({
       nameData.push(group)
     }
   this.setData({
-        nameData:nameData
+        nameData:nameData,
+        toastDisplay:"block",
+        htmlWrapDiaplay:"none"
   })
   console.log('---------')
   console.log(nameData)
@@ -47,6 +51,10 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    this.setData({
+        toastDisplay:"none",
+        htmlWrapDiaplay:"block"
+    })
   },
   onHide:function(){
     // 页面隐藏
@@ -64,8 +72,35 @@ Page({
   },
   //响应按钮点击点击
   bindButtonTapSheet:function(e){
-      console.log('tap')
+      actionSheetHidden = !actionSheetHidden
+      this.setData({
+        actionSheetHidden:actionSheetHidden
+      });
   },
+
+  //actionSheet状态改变
+  actionSheetChange:function(e){
+    actionSheetHidden = !actionSheetHidden
+    this.setData({
+      actionSheetHidden:actionSheetHidden
+    });
+  },
+
+  //actionaSheet按钮
+  ocrTap:function(e){
+      console.log("扫一扫")
+    wx.chooseImage({
+      count:1,
+      sizeType:["original","compressed"],
+      sourceType:["album","camera"],
+      success:function(response){
+        console.log(response)
+      }
+    })
+  },
+
+  //
+  //分组标签点击
   lettersTap:function(e){
     console.log(e.target.dataset.listName)
   },
