@@ -14,7 +14,10 @@ Page({
     actionSheetHidden:actionSheetHidden,
     //Toast展示
     toastDisplay:"",
-    htmlWrapDiaplay:""
+    htmlWrapDiaplay:"",
+    iconDisplayTime:"block",
+    iconDisplayName:"none",
+    iconDisplayCompany:"none"
   },
 
   bindInputChange:function(e){
@@ -96,6 +99,30 @@ Page({
       success:function(response){
         console.log(response)
       }
+    })
+  },
+
+  //排序方式按钮点击
+  bindTapTimeData:function(e){
+    this.setData({
+      iconDisplayTime:"block",
+      iconDisplayName:"none",
+      iconDisplayCompany:"none" 
+    });
+  },
+
+  bindTapNameData:function(e){
+    this.setData({
+      iconDisplayTime:"none",
+      iconDisplayName:"block",
+      iconDisplayCompany:"none" 
+    })
+  },
+  bindTapCompanyData:function(e){
+    this.setData({
+      iconDisplayTime:"none",
+      iconDisplayName:"none",
+      iconDisplayCompany:"block"  
     })
   },
 
