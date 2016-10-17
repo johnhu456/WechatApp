@@ -8,6 +8,7 @@
 <!--名片模板-->
 <template name="cardList">
     <block wx:for="{{cards}}" wx:for-item="card" wx:for-index="ci">
+        <navigator url = "/page/Cards/Card/card">
         <view class="user_card" style="display:{{card.display}};"
         bindtap="bindDrawerTap" data-card-id="{{card.id}}" data-card_type="{{card.cardType==null?'COMMON':card.cardType}}">
             <image class="userPhoto" src="{{card.thumbnail==null? '':card.thumbnail}}"/>
@@ -20,6 +21,7 @@
             <view class="useradress">{{card.company==null?'':card.company}}</view>
             </view>
         </view>
+        </navigator>
     </block>
 </template>
 

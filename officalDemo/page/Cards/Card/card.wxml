@@ -1,0 +1,16 @@
+<view class = "delete" bindtap="getBackStyle" style="display:{{getBackStyleDisplay}}">
+    <image class = "image" src="/images/bgc/delete.png"/>
+</view>
+<view class="card_detail_img {{noClickImg}}" style="display:{noPhotoDisplay}" bindtap="{{changeClick}}">
+    <swiper class="card_detail_img_panel {{ClickImg}}" autoplay="true" interval="1" duration="1" bindchange="slideChange">
+    <block wx:for-items="{{photos}}" wx:for-item="photo">
+        <swiper-item><image class="{{photoSwiper}}" src="{{photo==null? '': photo}}"/></swiper-item>
+    </block>
+    </swiper>
+
+    <view class="numberImg" style="display:{{getBackStyleDisplay}}">
+        <text>{{currentNumber}}</text>
+        <text>{{cardnum}}</text>
+    </view>
+</view>
+

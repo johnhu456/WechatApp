@@ -65,7 +65,9 @@
 
     "page/API/storage/storage",
 
-    "page/Cards/index/index"
+    "page/Cards/index/index",
+    
+    "page/Cards/Card/card"
   ],
   "window": {
     "navigationBarTextStyle": "black",
